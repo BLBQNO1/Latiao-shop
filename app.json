@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/category/category",
+    "pages/goods_list/goods_list",
+    "pages/goos_detail/goos_detail",
+    "pages/cart/cart",
+    "pages/collect/collect",
+    "pages/order/order",
+    "pages/search/search",
+    "pages/user/user",
+    "pages/feedback/feedback",
+    "pages/auth/auth",
+    "pages/pay/pay"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1E9FFF",
+    "navigationBarTitleText": "两包辣条",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#1E9FFF",
+    "list": [{
+      "text": "首页",
+      "iconPath": "icons/home.png",
+      "selectedIconPath": "icons/home_a.png",
+      "pagePath": "pages/index/index"
+    },{
+      "text": "分类",
+      "iconPath": "icons/category.png",
+      "selectedIconPath": "icons/category_a.png",
+      "pagePath": "pages/category/category"
+    },{
+      "text": "购物车",
+      "iconPath": "icons/shop.png",
+      "selectedIconPath": "icons/shop_a.png",
+      "pagePath": "pages/cart/cart"
+    },{
+      "text": "我的",
+      "iconPath": "icons/my.png",
+      "selectedIconPath": "icons/my_a.png",
+      "pagePath": "pages/user/user"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

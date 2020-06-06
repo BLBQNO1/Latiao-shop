@@ -1,0 +1,75 @@
+<view class="detail_swiper">
+  <swiper autoplay circular indicator-dots>
+    <swiper-item
+    wx:for="{{goodsObj.pics}}"
+    wx:key="pics_id"
+    bindtap="handlePrevewImage"
+    data-url="{{item.pics_mid}}"
+    >
+    <image mode="widthFix" src="{{item.pics_mid?item.pics_mid:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="goods_price">￥{{goodsObj.goods_price}}</view>
+<view class="goods_name_row">
+  <view class="goods_name">{{goodsObj.goods_name}}</view>
+  <view class="goods_collect" bindtap="handleCollect">
+    <text class="iconfont {{isCollect?'icon-shoucang':'icon-shoucang1'}}"></text>
+    <text class="collect_text">收藏</text>
+  </view>
+</view>
+
+<view class="goods_info">
+  <view class="goods_info_title">图文详情</view>
+  <view class="goods_info_content">
+    <rich-text nodes="{{goodsObj.goods_introduce}}"></rich-text>
+  </view>
+</view>
+
+<view class="btm_tool">
+  <view class="tool_item">
+    <view class="iconfont icon-kefu"></view>
+    <view>客服</view>
+    <button open-type="contact">1</button>
+  </view>
+  <view class="tool_item">
+    <view class="iconfont icon-fenxiang"></view>
+    <view>分享</view>
+    <button open-type="share"></button>
+  </view>
+  <navigator class="tool_item" open-type="switchTab" url="/pages/cart/cart">
+    <view class="iconfont icon-gouwuche"></view>
+    <view>购物车</view>
+  </navigator>
+  <view class="tool_item btn_cart" bindtap="handleCartAdd">
+    <view>加入购物车</view>
+  </view>
+  <view class="tool_item btn_buy" bindtap="handleBuy">
+    <view>立即购买
+      <button hidden="{{!userInfo.nickName}}" class="address" bindtap="handleChooseAddress"></button>
+    </view>
+  </view>
+</view>
+
+	<!-- 获取授权 -->
+	<view class="login" hidden="{{isLogin}}">
+		<view class="login_wrap">
+			<view class="title">Latiao 商城</view>
+			<view class="login_img">
+				<view class="img_box">
+					<image mode="widthFix" src="http://lblt.site/wx/favicon.png"></image>
+				</view>
+				<view class="img_box img_box1">
+					<image mode="widthFix" src="http://lblt.site/wx/arrow.png"></image>
+				</view>
+				<view class="img_box">
+					<open-data type="userAvatarUrl" class="img"></open-data>
+				</view>
+			</view>
+			<view class="btn">
+				<button open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">授权登录</button>
+				<button bindtap="handleCancel">暂不授权</button>
+			</view>
+		</view>
+	</view>
